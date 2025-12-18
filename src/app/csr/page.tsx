@@ -1,57 +1,32 @@
 import { csrPrograms } from "@/constants/csr/CSR_LIST";
 import CSRSection from "@/page/homePage/CSRSection";
-import { ArrowRight, Heart, Shield, Droplet, BookOpen } from "feather-icons-react";
+import { ArrowRight } from "feather-icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function CsrPage() {
   return (
     <main className="pb-1">
-      
+      <CSRSection className="flex flex-col-reverse !py-8 lg:!py-8 gap-y-8 lg:gap-y-16" />
+
       {/* Header Section in Green */}
       <div className="bg-[#6db921] text-white py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-            <div className="w-full lg:w-1/2 text-center lg:text-left">
-              <h1 className="text-3xl lg:text-5xl font-bold mb-4">
-                Corporate Social<br />Responsibility
-              </h1>
-            </div>
-            <div className="w-full lg:w-1/2 text-left">
-              <p className="text-xl lg:text-2xl font-medium mb-6">
-                Committed to Community
-              </p>
-              <p className="text-lg leading-relaxed">
-                At HPL, our commitment goes beyond business. We actively work to uplift communities in rural Haryana by ensuring access to basic necessities—clean drinking water, proper sanitation, and robust healthcare—to foster health and build a sustainable future for all.
-              </p>
-            </div>
-          </div>
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-3xl lg:text-5xl font-bold mb-4">
+            Corporate Social Responsibility
+          </h1>
+          <p className="text-xl lg:text-2xl font-medium mb-6">
+            Committed to Community
+          </p>
+          <p className="text-lg leading-relaxed max-w-4xl mx-auto">
+            At HPL, our commitment goes beyond business. We actively work to uplift communities in rural Haryana by ensuring access to basic necessities—clean drinking water, proper sanitation, and robust healthcare—to foster health and build a sustainable future for all.
+          </p>
         </div>
       </div>
 
-      {/* New Section After Header */}
-      <section className="py-8 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <p className="text-lg text-gray-700 mb-8 text-center">
-            We are committed to uplifting communities by focusing on key areas that foster development, health, and sustainability.
-          </p>
-          <Image
-            src="/assets/images/csr/gurudwara-cover.png"
-            alt="CSR Activities"
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg mx-auto"
-          />
-        </div>
-      </section>
-
-      <CSRSection className="flex flex-col-reverse !py-8 lg:!py-8 gap-y-8 lg:gap-y-16" />
-
-      
-
       <div className="container mx-auto mt-8 lg:mt-16 px-4 gap-8 space-y-8">
         {/* Introductory Body Text */}
-        <section className="p-8">
+        <section className="bg-gray-100 rounded-lg shadow-sm p-8">
           <h2 className="text-2xl font-semibold mb-4">Going Above and Beyond:</h2>
           <p className="mb-6 text-gray-700">
             Our commitment to Corporate Social Responsibility means dedicating ourselves to the betterment of the less fortunate. We have built strong partnerships with organizations like Prayas Social Welfare Society, Plan India, and PHD Rural Development, positively impacting the lives of women and children through education, sanitation, and essential support.
@@ -70,9 +45,36 @@ export default function CsrPage() {
           </p>
         </section>
 
+        {/* Focus Areas */}
+        <section className="text-center">
+          <p className="text-lg text-gray-700 mb-8">
+            We are committed to uplifting communities by focusing on key areas that foster development, health, and sustainability.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="bg-green-100 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-green-800">Good Health & Well being</h3>
+            </div>
+            <div className="bg-green-100 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-green-800">Sanitation and Hygiene</h3>
+            </div>
+            <div className="bg-green-100 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-green-800">Access to clean water</h3>
+            </div>
+            <div className="bg-green-100 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-green-800">Quality Education</h3>
+            </div>
+          </div>
+          <Link
+            href="/csr"
+            className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors"
+          >
+            Our Current CSR Projects
+            <ArrowRight size={20} />
+          </Link>
+        </section>
 
         {/* Providing Access to Clean Drinking Water & Toilets */}
-        <section className="p-8">
+        <section className="bg-gray-100 rounded-lg shadow-sm p-8">
           <h2 className="text-3xl font-bold mb-4">
             Providing Access to Clean Drinking Water & Toilets
           </h2>
@@ -88,64 +90,20 @@ export default function CsrPage() {
         </section>
 
         {/* HPL in the Headlines */}
-        <section className="p-8">
+        <section className="bg-gray-100 rounded-lg shadow-sm p-8">
           <h2 className="text-3xl font-bold mb-4">
             HPL in the Headlines
           </h2>
           <p className="text-xl font-medium mb-6">
             Our Impact Recognized
           </p>
-          <p className="text-gray-700 leading-relaxed mb-8">
+          <p className="text-gray-700 leading-relaxed">
             We invite you to read about our dedicated efforts and how our foundation's projects—from well-being initiatives to educational support—have been highlighted by leading print and digital media outlets.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Image
-              src="/assets/images/csr/gurudwara-cover.png"
-              alt="Media Coverage 1"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/phd-cover.png"
-              alt="Media Coverage 2"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/plan-cover.png"
-              alt="Media Coverage 3"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/prayas-cover.png"
-              alt="Media Coverage 4"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/skill-cover.png"
-              alt="Media Coverage 5"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/surjit-cover.png"
-              alt="Media Coverage 6"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-          </div>
         </section>
 
         {/* Our CSR Partners (Previous Projects) */}
-        <section className="p-8">
+        <section className="bg-gray-100 rounded-lg shadow-sm p-8">
           <h2 className="text-3xl font-bold mb-4">
             Our CSR Partners (Previous Projects)
           </h2>
@@ -181,7 +139,7 @@ export default function CsrPage() {
         </section>
 
         {/* The CSR Gallery */}
-        <section className="p-8">
+        <section className="bg-gray-100 rounded-lg shadow-sm p-8">
           <h2 className="text-3xl font-bold mb-4">
             The CSR Gallery
           </h2>
@@ -191,60 +149,46 @@ export default function CsrPage() {
           <p className="text-gray-700 leading-relaxed mb-8">
             We invite you to view our photo gallery to see the real-world impact of your support. From clean water installations to school renovations, these images capture the dedication and joy behind every HPL Foundation project.
           </p>
-          {/* Gallery Images - using images from the folders */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Gallery Images - using some from the folders */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Image
-              src="/assets/images/csr/phd-rural/1.jpg"
-              alt="PHD Rural Development Project"
+              src="/assets/images/csr/gurudwara-cover.png"
+              alt="Gurudwara Pushp Vihar"
               width={400}
               height={300}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/assets/images/csr/skill-csr/1.jpg"
-              alt="Skill Development Initiative"
+              src="/assets/images/csr/phd-cover.png"
+              alt="PHD Rural Development"
               width={400}
               height={300}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/assets/images/csr/surjit/1.jpg"
-              alt="Surjit Wasu Memorial Trust"
+              src="/assets/images/csr/plan-cover.png"
+              alt="Plan India"
               width={400}
               height={300}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/assets/images/csr/phd-rural/2.jpg"
-              alt="Rural Development Activities"
+              src="/assets/images/csr/prayas-cover.png"
+              alt="Prayas Social Welfare"
               width={400}
               height={300}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/assets/images/csr/skill-csr/2.jpg"
-              alt="Training Programs"
+              src="/assets/images/csr/skill-cover.png"
+              alt="Skill Development"
               width={400}
               height={300}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/assets/images/csr/surjit/2.jpg"
-              alt="Community Support"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/phd-rural/3.jpg"
-              alt="Water Facilities"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/skill-csr/3.jpg"
-              alt="Educational Support"
+              src="/assets/images/csr/surjit-cover.png"
+              alt="Surjit Wasu Memorial"
               width={400}
               height={300}
               className="w-full h-auto rounded-lg"
