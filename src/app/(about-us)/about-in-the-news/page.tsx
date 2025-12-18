@@ -94,7 +94,7 @@ export default function NewsPage() {
     setIsModalOpen(false);
   };
   const handleViewPdf = (pdfUrl: string) => {
-    if (isMobile) {
+    if (isMobile()) {
       downloadPDF(pdfUrl);
     } else {
       openModal(pdfUrl);
