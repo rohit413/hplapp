@@ -17,5 +17,9 @@ export const FOOTER_LINKS = {
     { name: "Contact Us", url: "/contact-us" },
     { name: "Career", url: "/career" },
   ],
-  certificates: ["ISO 9001:2015", "ISO 14001:2015", "ISO 45001:2018"],
+ certificates: [
+    {crtName:"ISO 9001:2015", url:"/assets/images/policies/ISO-9001.pdf"},
+    {crtName:"ISO 14001:2015", url:"/assets/images/policies/ISO-14001.pdf"},
+    {crtName:"ISO 45001:2018", url:"/assets/images/policies/ISO-45001.pdf"},
+  ],
 };

@@ -88,10 +88,16 @@ export default function Footer() {
           <h3 className="text-xl text-gray-200 font-semibold mb-4">
             Certificates
           </h3>
-          <ul className="space-y-4 text-gray-300  border-gray-600">
-            {certificates.map((cert) => (
-              <li className="border-b pb-4 w-full min-w-max" key={cert}>
-                {cert}
+           <ul className="space-y-4 text-gray-300  border-gray-600">
+            {certificates.map(({crtName,url}) => (
+              <li className="border-b pb-4 w-full min-w-max" key={crtName}>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
+                {crtName}
+                </a>
               </li>
             ))}
           </ul>
