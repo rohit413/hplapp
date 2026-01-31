@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   title: "HPLA-High Polymer Labs Limited",
   description:
     "HPL Additives Limited (formerly known as High Polymer Labs Limited), is a prominent name in the global market for Polymer Additives and Specialty Chemicals.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
 };
 
 export default function RootLayout({
