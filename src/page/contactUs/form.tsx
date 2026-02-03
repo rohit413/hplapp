@@ -12,10 +12,10 @@ import { FormEvent } from "react";
 export default function ContactForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData);
+    // const formData = new FormData(e.currentTarget);
+    // const data = Object.fromEntries(formData);
     try {
-      console.log("Form data:", data);
+
       alert("Form submitted successfully!");
     } catch (error) {
       console.error("Form submission error:", error);

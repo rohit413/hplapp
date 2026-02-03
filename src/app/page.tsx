@@ -6,9 +6,11 @@ import PostSection from "@/page/homePage/PostSection";
 import OurProducts from "@/page/homePage/Products";
 import StatsBanner from "@/page/homePage/StatsBanner";
 import TeamMembers from "@/page/homePage/TeamMembers";
+import HomePopup from "@/page/homePage/HomePopup";
 
 export default function Home() {
   return <main>
+    <HomePopup />
     <HeroSection />
     <AboutUs />
     <OurProducts />
