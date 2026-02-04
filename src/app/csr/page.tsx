@@ -1,201 +1,197 @@
-import { csrPrograms } from "@/constants/csr/CSR_LIST";
 import CSRSection from "@/page/homePage/CSRSection";
 import { ArrowRight } from "feather-icons-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function CsrPage() {
   return (
-    <main className="pb-1">
-      <CSRSection className="flex flex-col-reverse !py-8 lg:!py-8 gap-y-8 lg:gap-y-16" />
-
+    <main className="pb-10 bg-white">
       {/* Header Section in Green */}
-      <div className="bg-[#6db921] text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl lg:text-5xl font-bold mb-4">
-            Corporate Social Responsibility
-          </h1>
-          <p className="text-xl lg:text-2xl font-medium mb-6">
-            Committed to Community
-          </p>
-          <p className="text-lg leading-relaxed max-w-4xl mx-auto">
-            At HPL, our commitment goes beyond business. We actively work to uplift communities in rural Haryana by ensuring access to basic necessities—clean drinking water, proper sanitation, and robust healthcare—to foster health and build a sustainable future for all.
-          </p>
+      <div className="bg-[#6db921] text-white py-12 lg:py-20">
+        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+              Corporate Social<br />Responsibility
+            </h1>
+          </div>
+          <div>
+            <p className="text-lg leading-relaxed font-medium">
+              HPL is committed to improving lives by providing rural Haryana with access to clean drinking water and proper sanitation. Through our initiatives, we support the installation of safe water sources and hygienic toilets, promoting better health and a sustainable future for local communities.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="container mx-auto mt-8 lg:mt-16 px-4 gap-8 space-y-8">
-        {/* Introductory Body Text */}
-        <section className="bg-gray-100 rounded-lg shadow-sm p-8">
-          <h2 className="text-2xl font-semibold mb-4">Going Above and Beyond:</h2>
-          <p className="mb-6 text-gray-700">
-            Our commitment to Corporate Social Responsibility means dedicating ourselves to the betterment of the less fortunate. We have built strong partnerships with organizations like Prayas Social Welfare Society, Plan India, and PHD Rural Development, positively impacting the lives of women and children through education, sanitation, and essential support.
-          </p>
-          <h2 className="text-2xl font-semibold mb-4">The HPL Foundation:</h2>
-          <p className="mb-6 text-gray-700">
-            To deepen our impact, we established the HPL Foundation, our dedicated CSR Trust. Its core mission is to guarantee quality education, healthcare, sanitation, and access to clean drinking water for underprivileged communities near our facilities in Haryana and Punjab.
-          </p>
-          <h2 className="text-2xl font-semibold mb-4">Impact and Action:</h2>
-          <p className="mb-6 text-gray-700">
-            Through the Foundation, we have already installed RO plants and constructed hygienic men's and women's toilets in over 10 villages lacking access to these vital facilities. Furthermore, we constructed the Pushp Vihar Gurudwara with a Free Diagnostic Center (in partnership with Dr Lal Pathlabs), providing free healthcare services like X-rays, Ultrasounds, Diagnostic Tests, and Dental Care.
-          </p>
-          <h2 className="text-2xl font-semibold mb-4">Our Promise:</h2>
-          <p className="mb-6 text-gray-700">
-            We are dedicated to ensuring that our CSR efforts continue to expand, providing communities with the necessary services and facilities to raise their standard of living. Our commitment is to go beyond expectations.
-          </p>
-        </section>
+      {/* Introductory Body Text - Grey Boxed Section */}
+      <div className="bg-white py-12 lg:py-16">
+        <div className="container mx-auto px-4 lg:px-20">
+          <div className="bg-gray-100 p-8 lg:p-20 rounded-[40px]">
+            <div className="max-w-6xl mx-auto space-y-6 text-gray-700 leading-relaxed text-justify text-sm lg:text-base">
+              <p>
+                HPL Additives prides itself on its commitment and dedication to ensure that it not only fulfills its Corporate Social Responsibility but goes above and beyond to do as much as it can for the betterment of those less fortunate. HPL Additives has over the years provided support to various organizations such as Prayas Social Welfare Society, Plan India, PHD Rural Development, Prime Minister&apos;s Skill Development Fund etc. Through these organizations, HPL has been able to positively impact the lives of many women and children by providing them with education, launching mobile healthcare drives, financial support, and sanitation.
+              </p>
+              <p>
+                HPL Additives has now created a separate CSR Trust known as HPL Foundation with the mission to ensure quality education, healthcare, sanitation and access to clean drinking water to the underprivileged communities surrounding our plants and offices located in Haryana and Punjab. Under HPL Foundation, we started installing RO plants to provide access to clean drinking water, building toilets for both men and women to ensure proper hygiene and sanitation in over 10 villages that did not have access to either.
+              </p>
+              <p>
+                Furthermore, prior to this, under HPL Foundation, we have already constructed the Pushp Vihar Gurudwara with a Free Diagnostic Center (in oratorship with Dr Lal Pathlabs) that will provide the underprivileged with free of cost healthcare that includes services like X-rays, Ultrasounds, Diagnostic Tests, Dental Care, Feminine Care etc.
+              </p>
+              <p>
+                Going forward, we are going to continue to serve communities around us by ensuring they have access to all the necessary services and facilities to better their standard of living. We are completely dedicated to ensure that our corporate social responsibility goes beyond what is expected of us!
+              </p>
 
-        {/* Focus Areas */}
-        <section className="text-center">
-          <p className="text-lg text-gray-700 mb-8">
-            We are committed to uplifting communities by focusing on key areas that foster development, health, and sustainability.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <div className="bg-green-100 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-green-800">Good Health & Well being</h3>
-            </div>
-            <div className="bg-green-100 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-green-800">Sanitation and Hygiene</h3>
-            </div>
-            <div className="bg-green-100 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-green-800">Access to clean water</h3>
-            </div>
-            <div className="bg-green-100 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-green-800">Quality Education</h3>
+              {/* Focus Areas Section */}
+              <div className="pt-16 text-center">
+                <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-12">
+                  Our Current focus areas and on going projects include
+                </h2>
+                <div className="flex justify-center">
+                  <Image
+                    src="/assets/images/csr/focus-areas.png"
+                    alt="Focus Areas: Good Health, Sanitation, Clean Water, Quality Education, Sustainable Communities"
+                    width={1000}
+                    height={300}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-          <Link
-            href="/csr"
-            className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors"
-          >
-            Our Current CSR Projects
-            <ArrowRight size={20} />
-          </Link>
-        </section>
+        </div>
+      </div>
 
-        {/* Providing Access to Clean Drinking Water & Toilets */}
-        <section className="bg-gray-100 rounded-lg shadow-sm p-8">
-          <h2 className="text-3xl font-bold mb-4">
-            Providing Access to Clean Drinking Water & Toilets
-          </h2>
-          <p className="text-xl font-medium mb-6">
-            Hygiene First: Clean Water, Safe Sanitation, Healthier Communities
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            Launched through the HPL Foundation, the "Clean Water Drive" is a critical initiative providing sustainable clean drinking water facilities. We achieve this by installing RO plants, water coolers, and other essential amenities in villages near our factories in Faridabad, Ballabgarh, and Palwal. These efforts directly benefit underprivileged children, women, and men in the communities.
-          </p>
-          <p className="text-gray-700 leading-relaxed mt-4">
-            Complementing this, HPL is strongly committed to improving hygiene and sanitation by constructing and renovating safe toilet facilities in village schools. This integrated approach significantly boosts community health and supports our broader contributions to the health and education sectors.
-          </p>
-        </section>
+      {/* Our Current CSR Projects Section - White Background */}
+      <div className="bg-white py-12 lg:py-20">
+        <div className="container mx-auto px-4 lg:px-20 max-w-7xl text-center">
+          <h2 className="text-4xl lg:text-6xl font-extrabold text-[#333333] mb-8">Our Current CSR Projects</h2>
+          <button className="bg-[#6db921] text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-[#5ca01b] transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-1 duration-300">
+            Click here to view current project
+          </button>
+        </div>
+      </div>
 
-        {/* HPL in the Headlines */}
-        <section className="bg-gray-100 rounded-lg shadow-sm p-8">
-          <h2 className="text-3xl font-bold mb-4">
-            HPL in the Headlines
-          </h2>
-          <p className="text-xl font-medium mb-6">
-            Our Impact Recognized
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            We invite you to read about our dedicated efforts and how our foundation's projects—from well-being initiatives to educational support—have been highlighted by leading print and digital media outlets.
-          </p>
-        </section>
+      {/* Providing Access to Clean Drinking Water & Toilets - Grey Background */}
+      <div className="bg-gray-100 py-12 lg:py-20">
+        <div className="container mx-auto px-4 lg:px-20 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
+            <div className="lg:col-span-5">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+                Providing Access to Clean Drinking Water & Toilets
+              </h2>
+            </div>
+            <div className="lg:col-span-7 space-y-6 text-gray-700 text-sm lg:text-base leading-relaxed text-justify">
+              <p>
+                &quot;Clean Water Drive&quot; has been launched by the company through its charitable trust, HPL Foundation wherein clean drinking water facility through installation of RO plants, water coolers and other such amenities would be made available in the villages near its factories at Faridabad, Ballabgarh and Palwal for the underprivileged children, women and men of the villages.
+              </p>
+              <p>
+                Additionally, the company could also construct toilets and improve hygiene and sanitization in the schools of the villages, apart from their contribution in health and education sector.
+              </p>
+            </div>
+          </div>
 
-        {/* Our CSR Partners (Previous Projects) */}
-        <section className="bg-gray-100 rounded-lg shadow-sm p-8">
-          <h2 className="text-3xl font-bold mb-4">
-            Our CSR Partners (Previous Projects)
-          </h2>
-          <p className="text-xl font-medium mb-6">
-            Trusted Partnerships
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-8">
-            We are proud to have collaborated with and be recognized by reputable institutions and organizations, demonstrating the credibility and reach of the HPL Foundation's social commitments.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {csrPrograms.map((program, index) => (
-              <Link
-                key={index}
-                href={program.link}
-                className="block bg-white rounded-lg hover:scale-105 shadow-md overflow-hidden hover:shadow-lg transition duration-300"
-              >
-                <Image
-                  src={program.image}
-                  alt={program.alt}
-                  width={600}
-                  height={345}
-                  className="w-full h-auto object-cover rounded-t-lg"
-                />
-                <div className="p-4">
-                  <div className="h-1 w-16 bg-green-600 mb-2"></div>
-                  <h3 className="text-lg font-semibold text-green-600">
-                    {program.title}
-                  </h3>
+          {/* Village Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              "Village- Dadsiya & Gazipur",
+              "Village- Dabua Gaon & Mahawatpur",
+              "Village- Baroli & Adarsh Nagar",
+              "Shahpur Khurd & Bapu Nagar",
+              "Village- Palwal & Khajurka",
+              "Village- Sehrawak & Sector-3"
+            ].map((village, index) => (
+              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
+                <div className="bg-[#9ca3af] py-3 px-4">
+                  <h3 className="text-white font-bold text-lg text-center">{village}</h3>
                 </div>
-              </Link>
+                <div className="p-6 flex-grow flex flex-col justify-between items-center text-center">
+                  <p className="text-gray-600 mb-6">
+                    (Water Booth & Installation of RO Plant With Water Cooler Facilities & Construction of Toilets)
+                  </p>
+                  <button className="bg-[#6db921] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#5ca01b] transition-colors flex items-center gap-2">
+                    View Images
+                    <ArrowRight size={18} />
+                  </button>
+                </div>
+              </div>
             ))}
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* The CSR Gallery */}
-        <section className="bg-gray-100 rounded-lg shadow-sm p-8">
-          <h2 className="text-3xl font-bold mb-4">
-            The CSR Gallery
+      {/* CSR Appreciation in the NEWS Section - White Background */}
+      <div className="bg-white py-12 lg:py-20">
+        <div className="container mx-auto px-4 lg:px-20 max-w-8xl text-center">
+          <h2 className="text-4xl lg:text-6xl font-extrabold text-[#333333] mb-12">
+            CSR appreciation in the NEWS
           </h2>
-          <p className="text-xl font-medium mb-6">
-            Our Work in Action
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-8">
-            We invite you to view our photo gallery to see the real-world impact of your support. From clean water installations to school renovations, these images capture the dedication and joy behind every HPL Foundation project.
-          </p>
-          {/* Gallery Images - using some from the folders */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="w-full flex justify-center">
             <Image
-              src="/assets/images/csr/gurudwara-cover.png"
-              alt="Gurudwara Pushp Vihar"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/phd-cover.png"
-              alt="PHD Rural Development"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/plan-cover.png"
-              alt="Plan India"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/prayas-cover.png"
-              alt="Prayas Social Welfare"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/skill-cover.png"
-              alt="Skill Development"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
-            />
-            <Image
-              src="/assets/images/csr/surjit-cover.png"
-              alt="Surjit Wasu Memorial"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg"
+              src="/assets/images/csr/news-banner.jpg"
+              alt="CSR Appreciation in the News"
+              width={1200}
+              height={600}
+              className="w-full max-w-8xl h-auto rounded-lg"
             />
           </div>
-        </section>
+        </div>
       </div>
+
+      {/* Partners Section (CSR Appreciation in the NEWS) - Grey Background */}
+      <div className="bg-gray-100 py-12 lg:py-20">
+        <div className="container mx-auto px-4 lg:px-20 max-w-7xl">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#333333] mb-12 text-center">
+            CSR appreciation in the NEWS
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Surjit Wasu Memorial\nCharitable Trust (Regd.)",
+                image: "/assets/images/csr/surjit-cover.png"
+              },
+              {
+                title: "Prayas Social Welfare\nSociety (Regd.)",
+                image: "/assets/images/csr/prayas-cover.png"
+              },
+              {
+                title: "Prime Minister's Skill\nDevelopment",
+                image: "/assets/images/csr/skill-cover.png"
+              },
+              {
+                title: "Plan International\n(India Chapter)",
+                image: "/assets/images/csr/plan-cover.png"
+              },
+              {
+                title: "Gurudwara Pushp Vihar",
+                image: "/assets/images/csr/gurudwara-cover.png"
+              },
+              {
+                title: "PHD Rural\nDevelopment Foundation",
+                image: "/assets/images/csr/phd-cover.png"
+              }
+            ].map((partner, index) => (
+              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg border-2 border-[#6db921] flex flex-col hover:scale-105 transition-transform duration-300">
+                <div className="flex-grow bg-[#1a3668] flex items-center justify-center p-0 min-h-[250px]">
+                  <Image
+                    src={partner.image}
+                    alt={partner.title}
+                    width={500}
+                    height={300}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="bg-[#6db921] py-4 px-6 flex items-center justify-center h-24">
+                  <h3 className="text-white text-lg font-medium text-center whitespace-pre-line leading-tight">
+                    {partner.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CSR Chronicles Section */}
+      <CSRSection />
+
     </main>
   );
 }

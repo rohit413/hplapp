@@ -26,7 +26,7 @@ const HomePopup = () => {
             showCancelButton={false}
             requiredPadding={true} // Removes default padding
             containerClassName="!items-start !pt-[140px]" // Position below header (approx 100-140px)
-            className='!p-0 overflow-hidden' // Removed border
+            className='!p-0 overflow-hidden w-full md:!w-[600px]' // responsive width
         >
             <div className="relative w-full h-full">
                 <button

@@ -1,8 +1,6 @@
-import Banner from "@/components/Banner";
 import ContactForm from "@/page/contactUs/form";
 import Link from "next/link";
 import { MapPin, Mail, Phone, Printer } from "feather-icons-react";
-import type { FC, SVGProps } from "react";
 
 // Constant for office data
 const officeData = {
@@ -31,122 +29,102 @@ const officeData = {
   ],
 };
 
-// Info Card Component
-function InfoCard({ icon: Icon, title, content, href }: { icon: FC<SVGProps<SVGSVGElement>>; title: string; content: string; href?: string }) {
-  return (
-    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center group">
-      <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 group-hover:bg-green-500 transition-colors duration-300">
-        <Icon className="w-8 h-8 text-green-600 group-hover:text-white transition-colors duration-300" />
-      </div>
-      <h3 className="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
-      {href ? (
-        <Link href={href} className="text-gray-600 hover:text-green-600 transition-colors">
-          {content}
-        </Link>
-      ) : (
-        <p className="text-gray-600">{content}</p>
-      )}
-    </div>
-  );
-}
-
-// Global Office Card Component
-function GlobalOfficeCard({ office }: { office: typeof officeData.globalOffices[0] }) {
-  return (
-    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
-      <h3 className="text-2xl font-bold text-green-600 mb-4">{office.country}</h3>
-      <div className="space-y-3">
-        <div className="flex items-start gap-3">
-          <p className="text-gray-600">{office.address}</p>
-        </div>
-        {office.tell && (
-          <div className="flex items-center gap-3">
-            <p className="text-gray-600">Tell : {office.tell}</p>
-          </div>
-        )}
-        {office.mobile && (
-          <div className="flex items-center gap-3">
-            <p className="text-gray-600">Mobile : {office.mobile}</p>
-          </div>
-        )}
-        {office.email && (
-          <div className="flex items-center gap-3">
-            <Link href={`mailto:${office.email}`} className="text-gray-600 hover:text-green-600 transition-colors">
-            Email :  {office.email}
-            </Link>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
 export default function ContactPage() {
   return (
-    <main className="">
-      <Banner 
-        title="Contact Us" 
-        description="Reach out to HPL Additives for product inquiries, partnerships, or support. With offices in India, the USA, and China, their team is ready to connect and assist you worldwide."
-      />
-      <ContactForm />
-      
-      <div className="py-12 lg:py-20 px-6 lg:px-40 bg-gray-50">
+    <main className="bg-gray-50 pb-10">
+      {/* Header Section */}
+      <div className="bg-[#6db921] w-full py-16 lg:py-20 px-6 lg:px-20">
+        <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white uppercase tracking-wide">
+            Contact Us
+          </h1>
+          <p className="text-white text-sm lg:text-base max-w-xl text-center lg:text-right leading-relaxed font-medium">
+            Reach out to HPL Additives for product inquiries, partnerships, or support. With offices in India, the USA, and China, their team is ready to connect and assist you worldwide.
+          </p>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-20 -mt-10 lg:-mt-16 relative z-10 space-y-16">
+
+        {/* Contact Form Section */}
+        <ContactForm />
+
         {/* Contact Info Cards */}
-        <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <InfoCard 
-              icon={MapPin}
-              title="Corporate Office"
-              content={officeData.corporateOffice.address}
-            />
-            <InfoCard 
-              icon={Mail}
-              title="Email Address"
-              content={officeData.corporateOffice.email}
-              href={`mailto:${officeData.corporateOffice.email}`}
-            />
-            <InfoCard 
-              icon={Phone}
-              title="Phone Number"
-              content={officeData.corporateOffice.phone}
-              href={`tel:${officeData.corporateOffice.phone}`}
-            />
-            <InfoCard 
-              icon={Printer}
-              title="Fax Address"
-              content={officeData.corporateOffice.fax}
-            />
-          </div>
-        </section>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 pt-10">
+          {[
+            {
+              icon: MapPin,
+              title: "Corporate Office",
+              content: officeData.corporateOffice.address,
+              href: undefined
+            },
+            {
+              icon: Mail,
+              title: "Email Address",
+              content: officeData.corporateOffice.email.replace(",", "\n"),
+              href: `mailto:${officeData.corporateOffice.email.split(',')[0].trim()}`
+            },
+            {
+              icon: Phone,
+              title: "Phone Number",
+              content: officeData.corporateOffice.phone,
+              href: `tel:${officeData.corporateOffice.phone}`
+            },
+            {
+              icon: Printer,
+              title: "Fax Address",
+              content: officeData.corporateOffice.fax,
+              href: undefined
+            }
+          ].map((item, index) => (
+            <div key={index} className="bg-white rounded-3xl p-6 pt-12 shadow-lg hover:shadow-xl transition-all duration-300 relative flex flex-col items-center text-center group mt-8 lg:mt-0">
+              <div className="absolute -top-8 w-16 h-16 rounded-full bg-[#6db921] flex items-center justify-center border-4 border-gray-50 shadow-md transform group-hover:scale-110 transition-transform duration-300">
+                <item.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-800 mb-3">{item.title}</h3>
+              {item.href ? (
+                <Link href={item.href} className="text-sm text-gray-600 hover:text-[#6db921] transition-colors leading-relaxed whitespace-pre-line">
+                  {item.content}
+                </Link>
+              ) : (
+                <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">{item.content}</p>
+              )}
+            </div>
+          ))}
+        </div>
 
         {/* Global Offices Section */}
-        <section className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">Global <span className="text-green-600">Offices</span></h2>
-            <div className="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="bg-gray-100 rounded-3xl p-8 lg:p-12">
+          <h2 className="text-2xl lg:text-3xl font-bold text-[#6db921] mb-8">Global Offices</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {officeData.globalOffices.map((office, index) => (
-              <GlobalOfficeCard key={index} office={office} />
+              <div key={index}>
+                <h3 className="text-xl font-bold text-black mb-4 uppercase">{office.country}</h3>
+                <div className="text-gray-600 text-sm space-y-2 leading-relaxed">
+                  <p>{office.address}</p>
+                  {office.tell && <p>{office.tell}</p>}
+                  {office.mobile && <p>Mobile : {office.mobile}</p>}
+                  {office.email && <p>Email : {office.email}</p>}
+                </div>
+              </div>
             ))}
           </div>
-        </section>
+        </div>
 
         {/* Map Section */}
-        <section>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14028.091266737094!2d77.3029731!3d28.4788595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc093ae899affd4a3!2sVatika%20Mindscapes!5e0!3m2!1sen!2sin!4v1602671532733!5m2!1sen!2sin"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              aria-hidden="false"
-              tabIndex={0}
-              title="HPL Additives Location"
-            ></iframe>
-          </div>
-        </section>
+        <div className="rounded-3xl overflow-hidden shadow-lg h-[400px] w-full">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14028.091266737094!2d77.3029731!3d28.4788595!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc093ae899affd4a3!2sVatika%20Mindscapes!5e0!3m2!1sen!2sin!4v1602671532733!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="HPL Additives Location"
+          ></iframe>
+        </div>
+
       </div>
     </main>
   );
