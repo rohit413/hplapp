@@ -1,9 +1,6 @@
-
-import { csrPrograms } from "@/constants/csr/CSR_LIST";
 import CSRSection from "@/page/homePage/CSRSection";
 import { ArrowRight } from "feather-icons-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function CsrPage() {
   return (
