@@ -29,6 +29,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { ClientErrorBoundary } from "@/components/ErrorBoundaries/ClientErrorBoundary";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,10 +41,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
-        <Widget />
+        <ClientErrorBoundary>
+          <Header />
+          {children}
+          <Footer />
+          <Widget />
+        </ClientErrorBoundary>
       </body>
     </html>
   );

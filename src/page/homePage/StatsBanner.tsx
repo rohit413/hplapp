@@ -1,35 +1,45 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { STATS_DATA } from "@/constants/HOME_PAGE";
 import Image from "next/image";
 
 export default function StatsBanner() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  // Initialize with 0s
   const [counts, setCounts] = useState<number[]>(STATS_DATA.map(() => 0));
+
+  // Use useRef for animation frames to avoid cleanup issues
+  const animationRef = useRef<number | null>(null);
+  const startTimeRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!inView) return;
 
-    const intervals = STATS_DATA.map(({ value }, index) => {
-      const duration = 1000;      // total animation time (ms)
-      const steps = 60;           // how many frames
-      const increment = value / steps;
+    const duration = 2000; // 2 seconds animation
 
-      const id = setInterval(() => {
-        setCounts((prev) => {
-          const next = [...prev];
-          next[index] = Math.min(value, prev[index] + increment);
-          if (next[index] >= value) clearInterval(id); // stop when done
-          return next;
-        });
-      }, duration / steps);
+    const animate = (timestamp: number) => {
+      if (!startTimeRef.current) startTimeRef.current = timestamp;
+      const progress = timestamp - startTimeRef.current;
+      const percentage = Math.min(progress / duration, 1);
 
-      return id;
-    });
+      const newCounts = STATS_DATA.map((item) =>
+        Math.floor(item.value * percentage)
+      );
 
-    return () => intervals.forEach(clearInterval);
+      setCounts(newCounts);
+
+      if (progress < duration) {
+        animationRef.current = requestAnimationFrame(animate);
+      }
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+    };
   }, [inView]);
 
   return (
@@ -46,10 +56,10 @@ export default function StatsBanner() {
       />
 
       {STATS_DATA.map(({ label, suffix }, i) => (
-        <div key={label} className="space-y-2 text-center">
+        <div key={label} className="space-y-2 text-center z-10">
           <p className="lg:text-3xl text-xl font-semibold">{label}</p>
           <h2 className="lg:text-7xl text-5xl font-extrabold">
-            {Math.floor(counts[i])}
+            {counts[i]}
             {suffix ?? ""}
           </h2>
         </div>
