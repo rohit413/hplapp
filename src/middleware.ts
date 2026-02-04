@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 // Timeout duration in milliseconds (e.g., 2.5 seconds to beat the 3s PM2 kill)
 const REQUEST_TIMEOUT_MS = 2500;
 
-export async function middleware(request: NextRequest) {
+export async function middleware(_request: NextRequest) {
     const start = Date.now();
 
     try {
