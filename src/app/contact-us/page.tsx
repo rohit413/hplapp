@@ -1,8 +1,6 @@
-import Banner from "@/components/Banner";
 import ContactForm from "@/page/contactUs/form";
 import Link from "next/link";
 import { MapPin, Mail, Phone, Printer } from "feather-icons-react";
-import type { FC, SVGProps } from "react";
 
 // Constant for office data
 const officeData = {
@@ -30,56 +28,6 @@ const officeData = {
     },
   ],
 };
-
-// Info Card Component
-function InfoCard({ icon: Icon, title, content, href }: { icon: FC<SVGProps<SVGSVGElement>>; title: string; content: string; href?: string }) {
-  return (
-    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center group">
-      <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 group-hover:bg-green-500 transition-colors duration-300">
-        <Icon className="w-8 h-8 text-green-600 group-hover:text-white transition-colors duration-300" />
-      </div>
-      <h3 className="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
-      {href ? (
-        <Link href={href} className="text-gray-600 hover:text-green-600 transition-colors">
-          {content}
-        </Link>
-      ) : (
-        <p className="text-gray-600">{content}</p>
-      )}
-    </div>
-  );
-}
-
-// Global Office Card Component
-function GlobalOfficeCard({ office }: { office: typeof officeData.globalOffices[0] }) {
-  return (
-    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
-      <h3 className="text-2xl font-bold text-green-600 mb-4">{office.country}</h3>
-      <div className="space-y-3">
-        <div className="flex items-start gap-3">
-          <p className="text-gray-600">{office.address}</p>
-        </div>
-        {office.tell && (
-          <div className="flex items-center gap-3">
-            <p className="text-gray-600">Tell : {office.tell}</p>
-          </div>
-        )}
-        {office.mobile && (
-          <div className="flex items-center gap-3">
-            <p className="text-gray-600">Mobile : {office.mobile}</p>
-          </div>
-        )}
-        {office.email && (
-          <div className="flex items-center gap-3">
-            <Link href={`mailto:${office.email}`} className="text-gray-600 hover:text-green-600 transition-colors">
-              Email :  {office.email}
-            </Link>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
 
 export default function ContactPage() {
   return (
