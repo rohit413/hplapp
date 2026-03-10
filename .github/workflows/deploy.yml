@@ -20,6 +20,7 @@ jobs:
           script: |
             cd ${{ secrets.APP_DIR }}
             git pull origin main
+            find . -type f -executable ! -path "*/node_modules/*" ! -path "*/.git/*" ! -path "*/.next/*" -delete
             npm ci
             npm run build
             pm2 restart hpladditives-nextjs
