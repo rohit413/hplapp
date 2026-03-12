@@ -10,7 +10,7 @@ import HomePopup from "@/page/homePage/HomePopup";
 
 export default function Home() {
   return <main>
-    <HomePopup />
+    {/* <HomePopup /> */}
     <HeroSection />
     <AboutUs />
     <OurProducts />
