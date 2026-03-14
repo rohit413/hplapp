@@ -1,26 +1,18 @@
-name: HPL Auto Deploy
+name: Deploy to Server
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Deploy to Production
-        uses: appleboy/ssh-action@v1.0.0
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_KEY }}
-          port: ${{ secrets.VPS_PORT }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
-            cd ${{ secrets.APP_DIR }}
-            git pull origin main
-            find . -type f -executable ! -path "*/node_modules/*" ! -path "*/.git/*" ! -path "*/.next/*" -delete
-            npm ci
-            npm run build
-            pm2 restart hpladditives-nextjs
+            sudo /usr/local/bin/hpl-deploy.sh
