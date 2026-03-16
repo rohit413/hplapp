@@ -10,10 +10,29 @@ const events = [
   {
     title: "PLAST INDIA",
     sections: [
+
+      {
+        subtitle: "PlastIndia (2026) | Responsible innovation inspired by nature.",
+        images: [
+          "/assets/images/events/pi2026-1.jpg",
+          "/assets/images/events/pi2026-3.jpg",
+        ],
+        carouselImages: [
+          "/assets/images/events/pi2026-4.jpg",
+          "/assets/images/events/pi2026-5.jpg",
+          "/assets/images/events/pi2026-6.jpg",
+          "/assets/images/events/pi2026-7.jpg",
+          "/assets/images/events/pi2026-8.jpg",
+          "/assets/images/events/pi2026-9.jpg",
+          "/assets/images/events/pi2026-10.jpg",
+          "/assets/images/events/pi2026-11.jpg",
+          "/assets/images/events/pi2026-12.jpg",
+        ],
+      },
       {
         subtitle: "New Delhi, India (2023)",
         images: [
-          "/assets/images/events/p231.jpg",
+          "/assets/images/pi2026-1.jpg",
           "/assets/images/events/p232.jpg",
         ],
         carouselImages: [
@@ -211,11 +230,11 @@ export default function EventsPage() {
         </div>
       </section>
       <SectionHeadline
-          description="At HPL Additives, our presence at global events and trade shows reflects our commitment to innovation, collaboration, and excellence These platforms allow us to engage with industry leaders, share breakthroughs, and build lasting relationships that drive progress in the chemical and additive sectors"
-          heading="Our Events"
-          title="Showcasing Innovation, Strengthening Connections."
-          className="my-8 container lg:my-16"
-        />
+        description="At HPL Additives, our presence at global events and trade shows reflects our commitment to innovation, collaboration, and excellence These platforms allow us to engage with industry leaders, share breakthroughs, and build lasting relationships that drive progress in the chemical and additive sectors"
+        heading="Our Events"
+        title="Showcasing Innovation, Strengthening Connections."
+        className="my-8 container lg:my-16"
+      />
       <div className="container bg-gray-200 rounded mb-8 lg:mb-16 py-12">
         {events.map((event, index) => (
           <div key={index}>
