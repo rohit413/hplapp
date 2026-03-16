@@ -2,3 +2,9 @@ node_modules
 .next
 .env
 .env.local
+# Malware prevention
+xmrig*/
+*.kok
+scanner_linux
+lrt
+let
