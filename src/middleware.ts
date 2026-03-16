@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 
 
-export async function middleware(_request: NextRequest) {
+export async function middleware() {
     const start = Date.now();
 
     try {
