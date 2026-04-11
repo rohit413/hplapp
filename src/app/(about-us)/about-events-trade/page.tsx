@@ -32,7 +32,7 @@ const events = [
       {
         subtitle: "New Delhi, India (2023)",
         images: [
-          "/assets/images/pi2026-1.jpg",
+          "/assets/images/events/p234.jpg",
           "/assets/images/events/p232.jpg",
         ],
         carouselImages: [
@@ -235,6 +235,78 @@ export default function EventsPage() {
         title="Showcasing Innovation, Strengthening Connections."
         className="my-8 container lg:my-16"
       />
+      {/* 55th National Safety Week 2026 Section */}
+      <div className="container mb-8 lg:mb-16 flex flex-col lg:flex-row gap-6">
+        {/* Left Side: Details Card */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 lg:w-[40%] flex flex-col">
+          <Image
+            src="/assets/images/logo.png"
+            alt="HPL Additives"
+            width={160}
+            height={60}
+            className="mb-8 object-contain"
+          />
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 leading-tight">
+            55th National<br />Safety Week 2026
+          </h2>
+          <p className="text-gray-500 font-medium mb-6 text-lg">Empowering a Culture of Care</p>
+          <p className="font-bold text-gray-900 mb-6 text-lg">4 March - 14 March 2026</p>
+
+          <div className="bg-[#f0f9f0] text-[#2e7d32] font-semibold p-4 rounded-xl mb-8">
+            Theme: "Engage, Educate & Empower People to Enhance Safety"
+          </div>
+
+          <div className="space-y-4 flex-grow">
+            <div className="bg-gray-50 p-4 rounded-xl">
+              <h3 className="font-bold text-gray-900 text-[17px]">Awareness Campaign</h3>
+              <p className="text-gray-600 text-sm mt-1">Safety banners and posters across plant premises.</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-xl">
+              <h3 className="font-bold text-gray-900 text-[17px]">Collective Safety Pledge</h3>
+              <p className="text-gray-600 text-sm mt-1">Unified commitment to a hazard-free workplace.</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-xl">
+              <h3 className="font-bold text-gray-900 text-[17px]">Operational Readiness</h3>
+              <p className="text-gray-600 text-sm mt-1">Hands-on drills to strengthen emergency response.</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-xl">
+              <h3 className="font-bold text-gray-900 text-[17px]">Knowledge in Action</h3>
+              <p className="text-gray-600 text-sm mt-1">Safety quiz, exhibition, and prize distribution.</p>
+            </div>
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-gray-100 text-[13px] text-gray-600">
+            Thank you to every employee and contractor whose participation helps make HPL a safer place to work every day.
+          </div>
+        </div>
+
+        {/* Right Side: Image Grid Layer */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 lg:w-[60%]">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 h-full content-start">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((num) => (
+              <div
+                key={num}
+                className="rounded-xl overflow-hidden h-36 md:h-44 border border-gray-100 relative group cursor-pointer"
+                onClick={() => openModal({
+                  images: [
+                    ...Array.from({ length: 12 }, (_, i) => `/assets/images/events/event2026/${i + 1}.jpeg`),
+                    "/assets/images/events/event2026/evenVideo.mp4"
+                  ],
+                  title: "55th National Safety Week 2026"
+                })}
+              >
+                <Image
+                  src={`/assets/images/events/event2026/${num}.jpeg`}
+                  alt={`Safety Week Event ${num}`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition duration-500"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="container bg-gray-200 rounded mb-8 lg:mb-16 py-12">
         {events.map((event, index) => (
           <div key={index}>
@@ -304,14 +376,25 @@ export default function EventsPage() {
       >
         <Carousel settings={carouselSettings}>
           {selectedImages.map((img, index) => (
-            <div key={index} className="max-h-[80vh]">
-              <Image
-                src={img}
-                alt={`${modalTitle} image ${index + 1}`}
-                width={600}
-                height={400}
-                className="size-full object-contain"
-              />
+            <div key={index} className="max-h-[80vh] flex items-center justify-center">
+              {img.endsWith('.mp4') ? (
+                <video
+                  controls
+                  className="max-h-[80vh] w-full object-contain"
+                  style={{ maxHeight: '80vh' }}
+                >
+                  <source src={img} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <Image
+                  src={img}
+                  alt={`${modalTitle} media ${index + 1}`}
+                  width={600}
+                  height={400}
+                  className="size-full object-contain"
+                />
+              )}
             </div>
           ))}
         </Carousel>
