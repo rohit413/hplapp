@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { File } from 'feather-icons-react';
 
 const ESGPage = () => {
@@ -14,10 +15,13 @@ const ESGPage = () => {
           <p className="mb-6 text-gray-700">
             HPL Additives' ESG drive centres on robust policies, certified management systems (ISO 9001/14001/45001) and transparent reporting (ESG and CDP), backed by third-party GHG assurance. It advances responsible operations via climate, energy, water, waste, supply-chain and human-rights policies; TfS/Eco Vadis audits; and proactive regulatory compliance. Community programs under the HPL Foundation deliver clean water, sanitation and affordable diagnostics in the vicinity of our operational sites. The company emphasizes resource efficiency, safety and stakeholder engagement to balance growth with environmental and social responsibility across India and beyond.
           </p>
-          <p className="mb-6 text-gray-700">For more information, please read our latest Sustainability Report.</p>
-          <div className="flex flex-col sm:flex-row justify-end sm:space-x-4 space-y-2 sm:space-y-0">
-            <Link href={`/pdf/${encodeURIComponent("1.HPLA Sustainability Report - FY 2024-25.pdf")}`} className="bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors text-center"><File size={16} className="inline mr-2" />Sustainability Report</Link>
-          </div>
+          <Image
+            src="/assets/images/esg/trusted-global-standards.jpg"
+            alt="Trusted Global Standards. Verified Performance. — HPL Additives ISO, EcoVadis Silver & CDP B certifications"
+            width={1456}
+            height={816}
+            className="w-full rounded-lg"
+          />
         </div>
 
         <div id="environment" className="bg-gray-100 rounded-lg shadow-sm p-8">
