@@ -43,10 +43,10 @@ const newsItems = [
     description:
       "The first activity was an exhibition of the various safety and fire-fighting equipment used at all sites in times of emergencies. Section-wise competition for best team of firefighters.",
     image: {
-      src: "/assets/images/news/Exhibition of safety & fire-fighting equipment at all sites.jpg",
+      src: "/assets/images/news/exhibition-safety-fire-fighting-equipment.jpg",
       alt: "Fire safety exhibition",
     },
-    pdf: "/assets/images/news/Exhibition of safety & fire-fighting equipment at all sites.pdf",
+    pdf: "/assets/images/news/exhibition-safety-fire-fighting-equipment.pdf",
   },
   {
     title: "Celebrating World Environment Day!",
