@@ -72,17 +72,32 @@ const jobOpenings = [
 ];
 
 export default function CareersPage() {
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // const formData = new FormData(e.currentTarget);
-    // const data = Object.fromEntries(formData);
-    try {
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const phone = formData.get("phone");
+    const designation = formData.get("designation");
+    const resume = formData.get("resume") as File;
 
-      alert("Application submitted successfully!");
-    } catch (error) {
-      console.error("Form submission error:", error);
-      alert("Error submitting application. Please try again.");
+    const subject = `Job Application - ${designation} - ${name}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Designation: ${designation}`,
+    ].join("\n");
+
+    if (resume && resume.size > 0) {
+      alert(
+        `Your email app will open with your details filled in. Please attach your resume (${resume.name}) before sending.`
+      );
     }
+
+    window.location.href = `mailto:hr@hpladditives.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
   };
 
   return (
