@@ -1,15 +1,74 @@
 "use client";
 
 import Banner from "@/components/Banner";
-import { FileText, Mail, Phone, User } from "feather-icons-react";
+import JobOpeningCard from "@/components/career/JobOpeningCard";
+import {
+  Award,
+  CheckSquare,
+  Clipboard,
+  FileText,
+  Folder,
+  Mail,
+  Phone,
+  Target,
+  TrendingUp,
+  Users,
+  User,
+} from "feather-icons-react";
 import { FormEvent } from "react";
 
 const designationOptions = [
   { value: "", label: "Designation" },
+  { value: "Company Secretary", label: "Company Secretary" },
   { value: "Manager", label: "Manager" },
   { value: "Engineer", label: "Engineer" },
   { value: "Analyst", label: "Analyst" },
   { value: "Technician", label: "Technician" },
+];
+
+const jobOpenings = [
+  {
+    title: "Company",
+    highlight: "Secretary",
+    experience: "5+ Years",
+    location: "HPL Corporate Office, Faridabad",
+    industry: "Chemical Manufacturing",
+    email: "hr@hpladditives.com",
+    requirements: [
+      {
+        icon: CheckSquare,
+        text: "Hands-on experience in Companies Act, 2013, Corporate Governance and ROC/MCA compliances.",
+      },
+      {
+        icon: TrendingUp,
+        text: "Practical knowledge of TDS compliance, returns, Form 16/16A and tax reconciliation.",
+      },
+      {
+        icon: Users,
+        text: "Independently handle Board/General Meetings, notices, agendas, minutes and resolutions.",
+      },
+      {
+        icon: Award,
+        text: "Experience in individual income-tax computation, 26AS, AIS/TIS reconciliation.",
+      },
+      {
+        icon: Clipboard,
+        text: "Strong exposure to ROC filings, share issue/allotment, private placement, buyback, dividend and IEPF compliances.",
+      },
+      {
+        icon: Users,
+        text: "Coordinate with ROC/MCA, auditors, RTA, consultants, Finance and HR.",
+      },
+      {
+        icon: Folder,
+        text: "Maintain statutory registers, corporate and share capital records.",
+      },
+      {
+        icon: Target,
+        text: "Should be hands-on, independent, detail-oriented and capable of handling additional responsibilities.",
+      },
+    ],
+  },
 ];
 
 export default function CareersPage() {
@@ -31,7 +90,18 @@ export default function CareersPage() {
       <Banner title="Careers" />
       <div className="container py-12">
         <section>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+          <h2 className="text-2xl font-bold text-theme mb-6">
+            Current Openings
+          </h2>
+          <div className="space-y-8">
+            {jobOpenings.map((job) => (
+              <JobOpeningCard key={job.highlight} {...job} />
+            ))}
+          </div>
+        </section>
+
+        <section id="apply-form">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
             {/* Left Section: Description */}
             <div className="bg-white p-8 transition-transform hover:scale-105 duration-300 rounded-xl shadow-xl">
               <h2 className="text-2xl font-bold text-theme mb-4">
