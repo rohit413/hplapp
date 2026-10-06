@@ -218,6 +218,37 @@ export default function EventsPage() {
 
   return (
     <>
+      {/* CEO India Magazine Cover Story Banner */}
+      <section className="ceoIndiaBanner">
+        <a
+          href="/assets/images/events/Umesh-Team-CEO.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Read the full CEO India Magazine interview with Mr. Umesh Anand (PDF, opens in new tab)"
+          className="block"
+        >
+          <Image
+            src="/assets/images/events/ceo-india-banner.jpg"
+            alt="CEO India Magazine Cover Story - A Legacy Forged in Chemistry and Commitment, featuring Mr. Umesh Anand, Managing Director, HPL Additives Limited"
+            width={1920}
+            height={555}
+            sizes="100vw"
+            priority
+            className="w-full h-auto"
+          />
+        </a>
+        {/* Banner text is too small to read on phones, so show a clear CTA below it */}
+        <div className="md:hidden bg-[#1a0b4a] px-4 py-3 flex justify-center">
+          <a
+            href="/assets/images/events/Umesh-Team-CEO.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-[#f5d000] px-5 py-2 text-sm font-semibold text-white"
+          >
+            Read the full interview <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </section>
       <section className="growthAdditivesBanner">
         <div>
           <Image
