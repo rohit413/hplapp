@@ -9,17 +9,17 @@ const { LOGO, MENU } = HEADER;
 
 export default function HeaderDesktop() {
   return (
-    <div className="hidden md:flex container py-3 justify-between items-center">
+    <div className="hidden lg:flex container py-3 justify-between items-center gap-x-6">
      <Link href='/'>
       <Image
         src={LOGO}
         alt="Logo"
         width={208}
         height={64}
-        className="w-52 h-16"
+        className="w-44 h-14 xl:w-52 xl:h-16 shrink-0"
       />
      </Link>
-      <div className="text-lg flex font-medium space-x-8">
+      <div className="text-base xl:text-lg flex font-medium space-x-5 xl:space-x-8 whitespace-nowrap">
         {MENU.map(({ children, url, name }) => (
           <div className="relative" key={name}>
             {children ? (
@@ -52,13 +52,14 @@ export default function HeaderDesktop() {
         ))}
       </div>
       <Link
-        className="flex items-center gap-x-3"
+        className="flex items-center gap-x-3 shrink-0"
         href={`tel:${CONTACT_NUMBER}`}
+        aria-label={`Call ${CONTACT_NUMBER}`}
       >
         <div className="p-2.5 rounded-full bg-theme">
           <PhoneCall className="text-white size-6" />
         </div>
-        <p className="text-lg">
+        <p className="hidden xl:block text-lg whitespace-nowrap">
          
           <span className="font-bold">{CONTACT_NUMBER}</span>
         </p>

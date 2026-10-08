@@ -12,7 +12,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="hidden md:block">
+    <div className="hidden lg:block">
       {accordionItems.map((item, index) => (
         <div
           key={item.title}

@@ -30,7 +30,7 @@ function HeaderMobile() {
   }, [pathname]);
 
   return (
-    <div className="flex md:hidden py-2.5 px-4 items-center">
+    <div className="flex lg:hidden py-2.5 px-4 items-center">
       <Link href="/">
         <Image
           src={LOGO}
