@@ -218,6 +218,18 @@ export default function EventsPage() {
 
   return (
     <>
+      <section className="growthAdditivesBanner">
+        <div>
+          <Image
+            src="/assets/images/events/hplevent2023.jpg"
+            alt="Growth Additives Banner"
+            width={1920}
+            height={400}
+            priority
+            className="w-full"
+          />
+        </div>
+      </section>
       {/* CEO India Magazine Cover Story Banner */}
       <section className="ceoIndiaBanner">
         <a
@@ -233,7 +245,6 @@ export default function EventsPage() {
             width={1920}
             height={555}
             sizes="100vw"
-            priority
             className="w-full h-auto"
           />
         </a>
@@ -247,17 +258,6 @@ export default function EventsPage() {
           >
             Read the full interview <span aria-hidden="true">&rarr;</span>
           </a>
-        </div>
-      </section>
-      <section className="growthAdditivesBanner">
-        <div>
-          <Image
-            src="/assets/images/events/hplevent2023.jpg"
-            alt="Growth Additives Banner"
-            width={1920}
-            height={400}
-            className="w-full"
-          />
         </div>
       </section>
       <SectionHeadline

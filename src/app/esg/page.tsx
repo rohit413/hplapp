@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { File } from 'feather-icons-react';
+import CdpDisclosure from '@/components/esg/CdpDisclosure';
 
 const ESGPage = () => {
   return (
@@ -22,6 +23,7 @@ const ESGPage = () => {
             height={816}
             className="w-full rounded-lg"
           />
+          <CdpDisclosure />
         </div>
 
         <div id="environment" className="bg-gray-100 rounded-lg shadow-sm p-8">
