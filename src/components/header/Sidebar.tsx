@@ -34,7 +34,7 @@ function Sidebar({ handleToggleClick, navbarOpen }: SidebarProps) {
           className="absolute left-0 h-full w-full bg-black/55"
           onClick={handleToggleClick}
         />
-        <div className="absolute inset-0 z-10 p-4 flex w-[85%] flex-col text-base overflow-hidden bg-white">
+        <div className="absolute inset-0 z-10 p-4 flex w-[85%] max-w-sm flex-col text-base overflow-hidden bg-white">
           <div className="flex flex-grow flex-col gap-8 overflow-y-auto pb-[14px] pt-5">
             {MENU.map(({ children, url, name, icon: Icon }, index) => (
               <div className="relative" key={name}>

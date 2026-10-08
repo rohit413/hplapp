@@ -22,9 +22,9 @@ export default async function ProductPage({ params }: PageProps) {
     <div className="bg-[#f0f5f8]">
       <HeroSection />
       <div className="container py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <Sidebar />
-          <div className="col-span-2">
+          <div className="lg:col-span-2 min-w-0">
             <div className="bg-white p-4 lg:p-6 rounded-lg shadow-lg">
               <h1 className="text-3xl font-bold text-theme mb-2">
                 {product.title}{" "}

@@ -147,7 +147,7 @@ const products = [
     ),
   },
   {
-    href: "/oxo-bio-product",
+    href: "/higren-product",
     category: "OXO BIODEGRADABLE ADDITIVES",
     title: "HIGREN™ OXO Biodegradable Additives",
     image: "/assets/images/product/higren.jpg",
@@ -207,26 +207,26 @@ export default function Home() {
       {/* Product Section */}
       <HeroSection />
       <div className="container py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-16">
           <Sidebar />
-          <div className="col-span-2">
+          <div className="lg:col-span-2 min-w-0">
             {products.map((product, index) => (
               <Link
                 key={product.title + index}
                 href={product.href}
-                className="block mb-8 hover:scale-105 transition-transform duration-300 overflow-hidden rounded-2xl lg:p-8 bg-white shadow-lg shadow-theme "
+                className="block mb-8 hover:scale-[1.02] transition-transform duration-300 overflow-hidden rounded-2xl xl:p-8 bg-white shadow-lg shadow-theme"
               >
-                <div className="flex flex-col sm:flex-row">
-                  <div className="w-full lg:w-96 lg:rounded-2xl overflow-hidden mb-4 sm:mb-0 shrink-0">
+                <div className="flex flex-col xl:flex-row">
+                  <div className="w-full xl:w-80 2xl:w-96 xl:rounded-2xl overflow-hidden mb-4 xl:mb-0 shrink-0">
                     <Image
                       src={product.image}
-                      className="h-auto !w-full"
+                      className="h-auto md:h-64 xl:h-auto object-cover !w-full"
                       alt={product.alt}
                       height={400}
                       width={400}
                     />
                   </div>
-                  <div className="sm:ml-6 px-4 mb-4 lg:mb-0 lg:px-0">
+                  <div className="xl:ml-6 px-4 md:px-6 mb-4 xl:mb-0 xl:px-0 min-w-0 break-words">
                     <h6 className="text-theme text-sm font-semibold">
                       {product.category}
                     </h6>
